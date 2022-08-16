@@ -25,7 +25,7 @@ IniRead, ThemeSelect, nm_config.ini, Settings, GuiTheme
 SkinForm(Apply, A_ScriptDir . "\Styles\USkin.dll", A_ScriptDir . "\styles\" . ThemeSelect . ".msstyles")
 OnExit("ba_timersExit")
 
-gui ptimers:+AlwaysOnTop +border +resize +minsize50x30
+gui ptimers:+AlwaysOnTop +border +minsize50x30
 ;gui ptimers:font, s8 w1000 cBlack
 gui ptimers:font, s8 w1000
 ;gui ptimers:color, FFFFFF
@@ -58,11 +58,15 @@ gui ptimers:add, text,x258 y15 w60 vtimeOfDay +center +BackgroundTrans,00:00:00
 gui ptimers:add, text,x259 y22 w185 +left +BackgroundTrans,. . . . . . . .
 gui ptimers:add, text,x258 y36 w60 +center +BackgroundTrans,Mondo
 gui ptimers:add, text,x258 y50 w60 vmondoTimerB +center +BackgroundTrans,h m s
+gui ptimers:font, s8 w400
 gui ptimers:add, text,x258 y50 w60 cRED vmondoTimerR +center +BackgroundTrans,h m s
+gui ptimers:font, s8 w1000
 gui ptimers:add, text,x259 y57 w185 +left +BackgroundTrans,. . . . . . . .
 gui ptimers:add, text,x258 y70 w60 +center +BackgroundTrans,Puffs
 gui ptimers:add, text,x258 y85 w60 vpuffTimerB +center +BackgroundTrans,h m s
+gui ptimers:font, s8 w400
 gui ptimers:add, text,x258 y85 w60 cRED vpuffTimerR +center +BackgroundTrans,h m s
+gui ptimers:font, s8 w1000
 ;gui ptimers:font, s8 w400 cBlack
 gui ptimers:font, s8 w400
 gui ptimers:add, text,x0 y-12 w185 +left +BackgroundTrans,_____________________________________________________________________________________
@@ -93,7 +97,7 @@ gui, ptimers:add, text,x389 y89 w1 +left +BackgroundTrans,|
 ;gui ptimers:add, text,x120 y18 w185 +left +BackgroundTrans,_____________________________________________________
 gui ptimers:add, text,x324 y2 w55 +center +BackgroundTrans,AutoBoost:
 ;gui ptimers:font, s8 w700 cBlack
-gui ptimers:font, s8 w700
+gui ptimers:font, s8 w400
 gui ptimers:add, text,x340 y14 w35 cGREEN +left +BackgroundTrans vAFBon,[ON]
 gui ptimers:add, text,x340 y14 w35 cRED +left +BackgroundTrans vAFBoff,[OFF]
 ;gui ptimers:font, s8 w700 cBlack
@@ -101,7 +105,9 @@ gui ptimers:font, s8 w700
 gui ptimers:add, text,x321 y19 w185 +left +BackgroundTrans,. . . . . . . . . 
 gui ptimers:add, text,x323 y35 w60 +left +BackgroundTrans vboostTimerItem, Next:
 gui ptimers:add, text,x325 y35 w60 vboostTimer +right +BackgroundTrans,h m s
+gui ptimers:font, s8 w400
 gui ptimers:add, text,x325 y35 w60 cRED vboostTimerR +right +BackgroundTrans,h m s
+gui ptimers:font, s8 w700
 gui ptimers:add, text,x321 y42 w185 +left +BackgroundTrans,. . . . . . . . . 
 ;gui ptimers:font, s8 w700 cBlack
 gui ptimers:font, s8 w700
@@ -162,7 +168,9 @@ if(fileexist("ba_config.ini")){
 	IniRead, TimerH, ba_config.ini, gui, TimerH
 }
 ;msgbox x=%TimerX% y=%TimerY%
-gui ptimers:show, x%TimerX% y%TimerY% w%TimerW% h%TimerH%,Timers Plus by ScriptingNoob (Edited by MaraSorg)
+gui ptimers:show, x%TimerX% y%TimerY% w%TimerW% h%TimerH%,Timers GUI Plus by ScriptingNoob (Edited by MaraSorg)
+
+Gui, -Resize
 
 while(1){
 	loop, 3{
